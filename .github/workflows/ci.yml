@@ -30,6 +30,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - php: '8.3'
+            moodle-branch: 'MOODLE_404_STABLE'
+            database: 'mariadb'
           - php: '8.2'
             moodle-branch: 'MOODLE_403_STABLE'
             database: 'mariadb'
@@ -60,7 +63,7 @@ jobs:
 
       - name: Deploy moodle-plugin-ci
         run: |
-          composer create-project -n --no-dev --prefer-dist moodlehq/moodle-plugin-ci ci ^3
+          composer create-project -n --no-dev --prefer-dist moodlehq/moodle-plugin-ci ci ^4
           # Add dirs to $PATH
           echo $(cd ci/bin; pwd) >> $GITHUB_PATH
           echo $(cd ci/vendor/bin; pwd) >> $GITHUB_PATH
