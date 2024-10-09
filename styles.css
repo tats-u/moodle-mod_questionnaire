@@ -11,6 +11,10 @@
     color: gray;
 }
 
+#page-mod-questionnaire-questions .qcontainer .qnums ~ input[type=image] {
+    max-height: 1em;
+}
+
 #page-mod-questionnaire-questions .qcontainer .fstatic {
     width: 97%;
     margin-right: 1em;
